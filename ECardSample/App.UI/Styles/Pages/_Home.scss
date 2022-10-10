@@ -1,0 +1,81 @@
+﻿
+Home {
+    background-color: white;
+
+    #holder {
+        height: 100%;
+        width: 100%;
+        background-color: transparent;
+        width: calc("Content");
+        height: calc("Content");
+        margin-top: calc("view.Height,view.parent.Height,(vh,ph)=>(ph-vh)/2");
+
+        #Img {
+            margin-left: calc("view.Width,view.Parent.Width,(vw,pw)=>(pw-vw)/2");
+            width: 186px;
+            height: 250px;
+        }
+
+        #Title {
+            font-weight: bold;
+            text-align: center;
+            color: #3A1251;
+            font-size: 24px;
+        }
+
+        #Message {
+            font-weight: bold;
+            font-size: 15px;
+            margin-top: 7px;
+            text-align: center;
+            color: #3A1251;
+        }
+
+        #NormalButton {
+            height: 38px;
+            border-radius: 19px;
+            margin-left: 45px;
+            margin-right: 45px;
+            margin-top: 17px;
+            background-color: #32BDD2;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        #ButtonTextView {
+            font-weight: bold;
+            font-size: 14px;
+            color: white;
+            text-align: center;
+            margin-top: calc("view.Height,view.parent.Height,(vh,ph)=>(ph-vh)/2");
+        }
+
+        #TextBox {
+            margin-top: 9px;
+        }
+    }
+
+
+}
+
+.dark-mode, Page:dark {
+    Home {
+        background-color: #333333;
+
+        #holder {
+            background-color: transparent;
+
+            #Title {
+                color: white;
+            }
+
+            #Message {
+                color: white;
+            }
+
+            #ButtonTextView {
+                color: #3A1251;
+            }
+        }
+    }
+}

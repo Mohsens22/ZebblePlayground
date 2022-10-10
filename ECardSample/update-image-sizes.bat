@@ -1,0 +1,1 @@
+zebble-image update-sizes
