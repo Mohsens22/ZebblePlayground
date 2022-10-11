@@ -63,11 +63,8 @@ namespace UI
             CssEngine.Add(new File_App.UI.Styles.Common.HomeHolderNormalButtonCssRule());
             CssEngine.Add(new File_App.UI.Styles.Common.HomeHolderButtonTextViewCssRule());
             CssEngine.Add(new File_App.UI.Styles.Common.HomeHolderTextBoxCssRule());
-            CssEngine.Add(new File_App.UI.Styles.Common.HomeBodyCssRule());
             CssEngine.Add(new File_App.UI.Styles.Common.DarkModeHomeCssRule());
             CssEngine.Add(new File_App.UI.Styles.Common.PageDarkHomeCssRule());
-            CssEngine.Add(new File_App.UI.Styles.Common.DarkModeHomeBodyCssRule());
-            CssEngine.Add(new File_App.UI.Styles.Common.PageDarkHomeBodyCssRule());
             CssEngine.Add(new File_App.UI.Styles.Common.DarkModeHomeHolderCssRule());
             CssEngine.Add(new File_App.UI.Styles.Common.PageDarkHomeHolderCssRule());
             CssEngine.Add(new File_App.UI.Styles.Common.DarkModeHomeHolderTitleCssRule());
@@ -1083,35 +1080,7 @@ namespace File_App.UI.Styles.Common
 namespace File_App.UI.Styles.Common
 {
     [EscapeGCop("Auto-generated")]
-    [CssSelector("", "Home #Body")]
-    [CssBody("height: 100%; background-color: white;")]
-    class HomeBodyCssRule : CssRule
-    {
-        public override bool Matches(View view)
-        {
-            // CssEngine will only call me if a view matches: #Body
-
-            view = CssEngine.FindParentByType<Home>(view);
-
-            if (view is null) return false;
-
-            return true;
-        }
-
-        public override Task Apply(View view)
-        {
-            view.Css.Height = 100.Percent();
-            view.Css.BackgroundColor = Colors.White;
-
-            return Task.CompletedTask;
-        }
-    }
-}
-
-namespace File_App.UI.Styles.Common
-{
-    [EscapeGCop("Auto-generated")]
-    [CssSelector("App.UI/Styles/Components/_Utilities.scss:38", ".dark-mode Home")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:37", ".dark-mode Home")]
     [CssBody("background-color: #333333;")]
     class DarkModeHomeCssRule : CssRule
     {
@@ -1139,7 +1108,7 @@ namespace File_App.UI.Styles.Common
 namespace File_App.UI.Styles.Common
 {
     [EscapeGCop("Auto-generated")]
-    [CssSelector("App.UI/Styles/Components/_Utilities.scss:38", "Page:dark Home")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:37", "Page:dark Home")]
     [CssBody("background-color: #333333;")]
     class PageDarkHomeCssRule : CssRule
     {
@@ -1171,73 +1140,7 @@ namespace File_App.UI.Styles.Common
 namespace File_App.UI.Styles.Common
 {
     [EscapeGCop("Auto-generated")]
-    [CssSelector("App.UI/Styles/Components/_Utilities.scss:39", ".dark-mode Home #Body")]
-    [CssBody("background-color: #333333;")]
-    class DarkModeHomeBodyCssRule : CssRule
-    {
-        public override bool Matches(View view)
-        {
-            // CssEngine will only call me if a view matches: #Body
-
-            view = CssEngine.FindParentByType<Home>(view);
-
-            if (view is null) return false;
-
-            view = CssEngine.FindParentByCssClass(view, "dark-mode");
-
-            if (view is null) return false;
-
-            return true;
-        }
-
-        public override Task Apply(View view)
-        {
-            view.Css.BackgroundColor = "#333333";
-
-            return Task.CompletedTask;
-        }
-    }
-}
-
-namespace File_App.UI.Styles.Common
-{
-    [EscapeGCop("Auto-generated")]
-    [CssSelector("App.UI/Styles/Components/_Utilities.scss:39", "Page:dark Home #Body")]
-    [CssBody("background-color: #333333;")]
-    class PageDarkHomeBodyCssRule : CssRule
-    {
-        public override bool Matches(View view)
-        {
-            // CssEngine will only call me if a view matches: #Body
-
-            view = CssEngine.FindParentByType<Home>(view);
-
-            if (view is null) return false;
-
-            view = view.parent;
-            while (true)
-            {
-                if (view == null) return false;
-                else if (view is Page && view.PseudoCssState.ContainsWholeWord("dark")) break;
-                view = view.parent;
-            }
-
-            return true;
-        }
-
-        public override Task Apply(View view)
-        {
-            view.Css.BackgroundColor = "#333333";
-
-            return Task.CompletedTask;
-        }
-    }
-}
-
-namespace File_App.UI.Styles.Common
-{
-    [EscapeGCop("Auto-generated")]
-    [CssSelector("", ".dark-mode Home #holder")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:38", ".dark-mode Home #holder")]
     [CssBody("background-color: transparent;")]
     class DarkModeHomeHolderCssRule : CssRule
     {
@@ -1268,7 +1171,7 @@ namespace File_App.UI.Styles.Common
 namespace File_App.UI.Styles.Common
 {
     [EscapeGCop("Auto-generated")]
-    [CssSelector("", "Page:dark Home #holder")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:38", "Page:dark Home #holder")]
     [CssBody("background-color: transparent;")]
     class PageDarkHomeHolderCssRule : CssRule
     {
@@ -1303,7 +1206,7 @@ namespace File_App.UI.Styles.Common
 namespace File_App.UI.Styles.Common
 {
     [EscapeGCop("Auto-generated")]
-    [CssSelector("App.UI/Styles/Components/_Utilities.scss:42", ".dark-mode Home #holder #Title")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:39", ".dark-mode Home #holder #Title")]
     [CssBody("color: white;")]
     class DarkModeHomeHolderTitleCssRule : CssRule
     {
@@ -1338,7 +1241,7 @@ namespace File_App.UI.Styles.Common
 namespace File_App.UI.Styles.Common
 {
     [EscapeGCop("Auto-generated")]
-    [CssSelector("App.UI/Styles/Components/_Utilities.scss:42", "Page:dark Home #holder #Title")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:39", "Page:dark Home #holder #Title")]
     [CssBody("color: white;")]
     class PageDarkHomeHolderTitleCssRule : CssRule
     {
@@ -1377,7 +1280,7 @@ namespace File_App.UI.Styles.Common
 namespace File_App.UI.Styles.Common
 {
     [EscapeGCop("Auto-generated")]
-    [CssSelector("App.UI/Styles/Components/_Utilities.scss:43", ".dark-mode Home #holder #Message")]
+    [CssSelector("", ".dark-mode Home #holder #Message")]
     [CssBody("color: white;")]
     class DarkModeHomeHolderMessageCssRule : CssRule
     {
@@ -1412,7 +1315,7 @@ namespace File_App.UI.Styles.Common
 namespace File_App.UI.Styles.Common
 {
     [EscapeGCop("Auto-generated")]
-    [CssSelector("App.UI/Styles/Components/_Utilities.scss:43", "Page:dark Home #holder #Message")]
+    [CssSelector("", "Page:dark Home #holder #Message")]
     [CssBody("color: white;")]
     class PageDarkHomeHolderMessageCssRule : CssRule
     {
@@ -1451,7 +1354,7 @@ namespace File_App.UI.Styles.Common
 namespace File_App.UI.Styles.Common
 {
     [EscapeGCop("Auto-generated")]
-    [CssSelector("App.UI/Styles/Components/_Utilities.scss:44", ".dark-mode Home #holder #ButtonTextView")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:42", ".dark-mode Home #holder #ButtonTextView")]
     [CssBody("color: #3A1251;")]
     class DarkModeHomeHolderButtonTextViewCssRule : CssRule
     {
@@ -1486,7 +1389,7 @@ namespace File_App.UI.Styles.Common
 namespace File_App.UI.Styles.Common
 {
     [EscapeGCop("Auto-generated")]
-    [CssSelector("App.UI/Styles/Components/_Utilities.scss:44", "Page:dark Home #holder #ButtonTextView")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:42", "Page:dark Home #holder #ButtonTextView")]
     [CssBody("color: #3A1251;")]
     class PageDarkHomeHolderButtonTextViewCssRule : CssRule
     {
@@ -1525,7 +1428,7 @@ namespace File_App.UI.Styles.Common
 namespace File_App.UI.Styles.Common
 {
     [EscapeGCop("Auto-generated")]
-    [CssSelector("App.UI/Styles/Components/_Utilities.scss:47", "#Body")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:44", "#Body")]
     [CssBody("height: 100%;")]
     class BodyCssRule : CssRule
     {
@@ -1548,7 +1451,7 @@ namespace File_App.UI.Styles.Common
 namespace File_App.UI.Styles.Common
 {
     [EscapeGCop("Auto-generated")]
-    [CssSelector("App.UI/Styles/Components/_Utilities.scss:49", "#Wrapper")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:47", "#Wrapper")]
     [CssBody("padding: 16px;")]
     class WrapperCssRule : CssRule
     {

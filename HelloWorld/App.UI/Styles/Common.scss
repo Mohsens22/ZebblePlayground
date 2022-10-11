@@ -1,0 +1,13 @@
+﻿@import "Templates/Blank.scss";
+@import "Components/_Button.scss";
+@import "Components/_ImageView.scss";
+@import "Components/_PopUp.scss";
+@import "Components/_Utilities.scss";
+@import "Pages/Home.scss";
+
+#Body {
+    height: 100%;
+}
+#Wrapper {
+    padding: 16px;
+}

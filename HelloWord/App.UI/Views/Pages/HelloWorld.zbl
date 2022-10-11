@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<zbl xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:noNamespaceSchemaLocation="../.zebble-schema.xml">
-   <class type="HelloWorld" base="Page" namespace="UI.Pages">
-      <Stack Id="holder">
-         <TextView Id="main" Text="Hello World From Zebble.net!" />
-      </Stack>
-   </class>
-</zbl>

@@ -1,0 +1,12 @@
+﻿Home {
+    #holder {
+        height:100%;
+    }
+
+    #main {
+        margin-top:calc("view.Height,view.parent.Height,(vh,ph)=>(ph-vh)/2");
+        text-align:center;
+        font-weight: bold;
+        font-size: 22px;
+    }
+}
