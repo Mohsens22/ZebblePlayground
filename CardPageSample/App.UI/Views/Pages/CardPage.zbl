@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<zbl xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation="../.zebble-schema.xml">
+   <class type="CardPage" base="Page" namespace="UI.Pages">
+      <Stack Id="Scaffold">
+         <Stack Id="Content">
+            <Stack Id="Tile" ClipChildren="true">
+               <ImageView Path="Images/Task2.png" Id="Background" Stretch="AspectFill" Alignment="Middle" />
+               <Stack Id="BoxContainer">
+                  <Canvas Id="MessageBackground"
+                          Style="z-index: 0; position: absolute; left: 0px; top: 0px; opacity: 0.2; background: #000000; width: 100%; height: 100%;" />
+                  <TextView Id="Message" Text="To drink so that you no longer feel thirsty." />
+               </Stack>
+               <Stack Id="TitleContainer">
+                  <Row Id="WordElement">
+                     <TextView Id="Title" Text="Slake" />
+                     <Center Id="WordSeprator" />
+                     <ImageView Id="WordIcon" Path="Images/Icons/Speaker.png" />
+                  </Row>
+                  <TextView Id="PronunciationTxt" Text="/sleɪk/" />
+               </Stack>
+               <ImageView Id="MenuButton" Path="Images/Icons/MenuCircle.png" />
+               <TextView Id="Tag" Text="#14,564" />
+            </Stack>
+            <Center Id="ActionButtonsRow">
+               <Stack Id="LeftButton" CssClass="rounded-button left-button" on-Tapped="DarkThemeButtonTapped">
+                  <TextView Id="LeftButtonTxt" Text="Dark theme" />
+               </Stack>
+               <Stack Id="Seprator" />
+               <Stack Id="RightButton" CssClass="rounded-button right-button">
+                  <TextView Id="RightButtonTxt" Text="Light theme" on-Tapped="LightThemeButtonTapped" />
+               </Stack>
+            </Center>
+         </Stack>
+      </Stack>
+   </class>
+</zbl>

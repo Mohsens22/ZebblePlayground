@@ -3,7 +3,6 @@ namespace UI
     using System;
     using System.Reflection;
     using System.Threading.Tasks;
-    using Windows.UI.WebUI;
     using UI.Pages;
     using Zebble;
     using Zebble.Testing;

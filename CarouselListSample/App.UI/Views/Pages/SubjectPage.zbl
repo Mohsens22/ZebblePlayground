@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<zbl xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation="../.zebble-schema.xml">
+   <class type="SubjectPage" base="Page" namespace="UI.Pages">
+      <Stack Id="Scaffold">
+         <Stack CssClass="PrimaryButton" on-Tapped="GoBack">
+            <TextView Text="Back" />
+         </Stack>
+         <CollectionView of="StringVM, ItemTemp" Id="SubjectList" ShouldMeasureForAll="false">
+            <class CssClass="ListItem" type="ItemTemp" base="Canvas" AutoFlash="false" viewmodel="StringVM" />
+         </CollectionView>
+      </Stack>
+   </class>
+</zbl>

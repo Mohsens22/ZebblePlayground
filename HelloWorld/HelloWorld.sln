@@ -278,6 +278,8 @@ Global
 		App.Domain\Domain.projitems*{38e83e4d-f88c-40c0-9528-9c818b0eaf42}*SharedItemsImports = 13
 		App.Domain\Domain.projitems*{51aeafb7-e02b-4f51-8ab0-aa90e034e684}*SharedItemsImports = 4
 		App.UI\UI.projitems*{51aeafb7-e02b-4f51-8ab0-aa90e034e684}*SharedItemsImports = 4
+		App.Domain\Domain.projitems*{573f454c-6003-40c8-a09d-3304f28d5f10}*SharedItemsImports = 4
+		App.UI\UI.projitems*{573f454c-6003-40c8-a09d-3304f28d5f10}*SharedItemsImports = 4
 		App.UI\UI.projitems*{cd40d45a-cffe-46fc-8a9d-055ef9ff9440}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal

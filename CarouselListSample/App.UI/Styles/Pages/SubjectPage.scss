@@ -1,0 +1,26 @@
+﻿SubjectPage {
+    #Scaffold {
+        background-color: #F5F5F5;
+        height: 100%;
+    }
+
+    .PrimaryButton {
+        border-radius: 25px;
+        background-color: #32BDD2;
+        margin-top: 54px;
+        height: 40px;
+        width: 204px;
+        margin-left: calc("view.Width,view.parent.Width,(vw,pw)=>(pw-vw)/2");
+
+        TextView {
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+            color: white;
+            margin-top: calc("view.Height,view.parent.Height,(vh,ph)=>(ph-vh)/2");
+        }
+    }
+    .ListItem{
+        height:80px;
+    }
+}

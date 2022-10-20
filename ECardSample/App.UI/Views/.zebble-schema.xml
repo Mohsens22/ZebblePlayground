@@ -58,6 +58,7 @@
       <xs:enumeration value="/Resources/Images/GreatJob.png" />
       <xs:enumeration value="/Resources/Images/Logo.png" />
       <xs:enumeration value="/Resources/Images/Splash.png" />
+      <xs:enumeration value="/Resources/Images/Task2.png" />
       <xs:enumeration value="/Resources/Images/Icons/categories-icon-blue.png" />
       <xs:enumeration value="/Resources/Images/Icons/categories-icon.png" />
       <xs:enumeration value="/Resources/Images/Icons/contacts-icon-blue.png" />
@@ -72,6 +73,25 @@
       <xs:enumeration value="/Resources/Images/Icons/settings-icon-blue.png" />
       <xs:enumeration value="/Resources/Images/Icons/settings-icon.png" />
       <xs:enumeration value="/Resources/Images/Icons/Shoes.png" />
+      <xs:enumeration value="/Resources/Images/Icons/Speaker.png" />
+      <xs:enumeration value="/Resources/Images/Icons/Spinner.png" />
+      <xs:enumeration value="/Resources/Images/GreatJob.png" />
+      <xs:enumeration value="/Resources/Images/Logo.png" />
+      <xs:enumeration value="/Resources/Images/Task2.png" />
+      <xs:enumeration value="/Resources/Images/Icons/categories-icon-blue.png" />
+      <xs:enumeration value="/Resources/Images/Icons/categories-icon.png" />
+      <xs:enumeration value="/Resources/Images/Icons/contacts-icon-blue.png" />
+      <xs:enumeration value="/Resources/Images/Icons/contacts-icon.png" />
+      <xs:enumeration value="/Resources/Images/Icons/Home-blue.png" />
+      <xs:enumeration value="/Resources/Images/Icons/Home.png" />
+      <xs:enumeration value="/Resources/Images/Icons/info.png" />
+      <xs:enumeration value="/Resources/Images/Icons/ios-arrow-back.png" />
+      <xs:enumeration value="/Resources/Images/Icons/Menu.png" />
+      <xs:enumeration value="/Resources/Images/Icons/not-found.png" />
+      <xs:enumeration value="/Resources/Images/Icons/settings-icon-blue.png" />
+      <xs:enumeration value="/Resources/Images/Icons/settings-icon.png" />
+      <xs:enumeration value="/Resources/Images/Icons/Shoes.png" />
+      <xs:enumeration value="/Resources/Images/Icons/Speaker.png" />
       <xs:enumeration value="/Resources/Images/Icons/Spinner.png" />
       <xs:enumeration value="/Resources/drawable/Featured_Graphic.png" />
       <xs:enumeration value="/Resources/1024x1024.png" />
@@ -114,6 +134,7 @@
       <xs:enumeration value="/Resources/Legacy-Icon-72.png" />
       <xs:enumeration value="/Resources/Images/GreatJob.png" />
       <xs:enumeration value="/Resources/Images/Logo.png" />
+      <xs:enumeration value="/Resources/Images/Task2.png" />
       <xs:enumeration value="/Resources/Images/Icons/categories-icon-blue.png" />
       <xs:enumeration value="/Resources/Images/Icons/categories-icon.png" />
       <xs:enumeration value="/Resources/Images/Icons/contacts-icon-blue.png" />
@@ -127,9 +148,11 @@
       <xs:enumeration value="/Resources/Images/Icons/settings-icon-blue.png" />
       <xs:enumeration value="/Resources/Images/Icons/settings-icon.png" />
       <xs:enumeration value="/Resources/Images/Icons/Shoes.png" />
+      <xs:enumeration value="/Resources/Images/Icons/Speaker.png" />
       <xs:enumeration value="/Resources/Images/Icons/Spinner.png" />
       <xs:enumeration value="/Resources/Images/GreatJob.png" />
       <xs:enumeration value="/Resources/Images/Logo.png" />
+      <xs:enumeration value="/Resources/Images/Task2.png" />
       <xs:enumeration value="/Resources/Images/Icons/categories-icon-blue.png" />
       <xs:enumeration value="/Resources/Images/Icons/categories-icon.png" />
       <xs:enumeration value="/Resources/Images/Icons/contacts-icon-blue.png" />
@@ -143,6 +166,7 @@
       <xs:enumeration value="/Resources/Images/Icons/settings-icon-blue.png" />
       <xs:enumeration value="/Resources/Images/Icons/settings-icon.png" />
       <xs:enumeration value="/Resources/Images/Icons/Shoes.png" />
+      <xs:enumeration value="/Resources/Images/Icons/Speaker.png" />
       <xs:enumeration value="/Resources/Images/Icons/Spinner.png" />
       <xs:enumeration value="@....." />
     </xs:restriction>

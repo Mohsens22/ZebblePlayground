@@ -1,0 +1,33 @@
+﻿CategoriesPage {
+    background-color: #F5F5F5;
+
+    #Scaffold {
+        margin-left: 16px;
+        margin-top: 30px;
+    }
+
+    .PrimaryButton {
+        border-radius: 25px;
+        background-color: #32BDD2;
+        margin-top:54px;
+        height:40px;
+        width:204px;
+        margin-left:calc("view.Width,view.parent.Width,(vw,pw)=>(pw-vw)/2");
+        TextView{
+            text-align:center;
+            font-weight:bold;
+            font-size:14px;
+            color:white;
+            margin-top:calc("view.Height,view.parent.Height,(vh,ph)=>(ph-vh)/2");
+        }
+    }
+}
+
+.dark-mode, Page:dark {
+    CategoriesPage {
+        background-color: #000000;
+        #Scaffold {
+            background-color: #000000;
+        }
+    }
+}

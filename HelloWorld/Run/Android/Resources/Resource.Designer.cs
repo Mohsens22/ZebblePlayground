@@ -14,7 +14,7 @@ namespace Android
 {
 	
 	
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "1.0.0.0")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "13.0.0.73")]
 	public partial class Resource
 	{
 		
@@ -153,6 +153,7 @@ namespace Android
 			global::Xamarin.Essentials.Resource.Id.text2 = global::Android.Resource.Id.text2;
 			global::Xamarin.Essentials.Resource.Id.time = global::Android.Resource.Id.time;
 			global::Xamarin.Essentials.Resource.Id.title = global::Android.Resource.Id.title;
+			global::Xamarin.Essentials.Resource.Id.view_tree_lifecycle_owner = global::Android.Resource.Id.view_tree_lifecycle_owner;
 			global::Xamarin.Essentials.Resource.Integer.status_bar_notification_info_maxnum = global::Android.Resource.Integer.status_bar_notification_info_maxnum;
 			global::Xamarin.Essentials.Resource.Layout.browser_actions_context_menu_page = global::Android.Resource.Layout.browser_actions_context_menu_page;
 			global::Xamarin.Essentials.Resource.Layout.browser_actions_context_menu_row = global::Android.Resource.Layout.browser_actions_context_menu_row;

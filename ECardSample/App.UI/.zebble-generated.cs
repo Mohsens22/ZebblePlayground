@@ -67,6 +67,6 @@ namespace UI
     partial class StartUp
     {
         // Hashed content of all resources
-        public override string GetResourcesVersion() => "m3c7rKTPWW6HtrsI7fRJvFPDS6U";
+        public override string GetResourcesVersion() => "HmmpLGYfpb6VCFP6MgfMgx4fY";
     }
 }

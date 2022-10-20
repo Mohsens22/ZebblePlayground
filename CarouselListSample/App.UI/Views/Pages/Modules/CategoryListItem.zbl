@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<zbl xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation="../../.zebble-schema.xml">
+   <class type="CategoryListItem" base="ListViewItem[Domain.Models.Category]" namespace="UI.Modules">
+      <Stack>
+         <TextView Id="CategoryName" Text="@{CategoryItem, x=>x.Name}" />
+         <RecyclerCarousel Id="Carousel"
+                           of="Domain.Models.Subject, SlideTemplate"
+                           ShowBullets="false"
+                           CenterAligned="false"
+                           SlideWidth="80"
+                           ClipChildren="false">
+            <class type="SlideTemplate" base="RecyclerCarouselSlide[Domain.Models.Subject]" ClipChildren="false">
+               <Stack CssClass="CategorySlide">
+                  <ImageView CssClass="SubjectImage" Path="@{Item, x=>x.ImageURL}" Stretch="AspectFill" />
+                  <TextView CssClass="SubjectName" Text="@{Item, x=>x.Name}" Wrap="true" />
+               </Stack>
+            </class>
+         </RecyclerCarousel>
+      </Stack>
+   </class>
+</zbl>
