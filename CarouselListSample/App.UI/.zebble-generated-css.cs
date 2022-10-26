@@ -1203,7 +1203,7 @@ namespace File_App.UI.Styles.Common
 {
     [EscapeGCop("Auto-generated")]
     [CssSelector("", "CategoryListItem #Carousel #SlidesContainer Carousel-Slide")]
-    [CssBody("height: calc(\"Content\");")]
+    [CssBody("height: calc(\"Content\"); padding-left: 5px;")]
     class CategoryListItemCarouselSlidesContainerCarouselSlideCssRule : CssRule
     {
         public override bool Matches(View view)
@@ -1229,6 +1229,7 @@ namespace File_App.UI.Styles.Common
         {
             var view = (Carousel.Slide)untypedView;
             view.Css.Height = Length.AutoStrategy.Content;
+            view.Css.Padding.Left = 5;
 
             return Task.CompletedTask;
         }
@@ -1239,7 +1240,7 @@ namespace File_App.UI.Styles.Common
 {
     [EscapeGCop("Auto-generated")]
     [CssSelector("App.UI/Styles/Components/_Utilities.scss:42", "CategoryListItem .CategorySlide")]
-    [CssBody("background-color: white; height: 120px; width: 100%; margin-left: 5px; border-radius: 5px;")]
+    [CssBody("background-color: white; height: 120px; width: 100%; border-radius: 3px;")]
     class CategoryListItemCategorySlideCssRule : CssRule
     {
         public override bool Matches(View view)
@@ -1257,9 +1258,8 @@ namespace File_App.UI.Styles.Common
         {
             view.Css.Height = 120;
             view.Css.Width = 100.Percent();
-            view.Css.Margin.Left = 5;
             view.Css.BackgroundColor = Colors.White;
-            view.Css.BorderRadius = 5;
+            view.Css.BorderRadius = 3;
 
             return Task.CompletedTask;
         }
@@ -1556,13 +1556,13 @@ namespace File_App.UI.Styles.Common
 namespace File_App.UI.Styles.Common
 {
     [EscapeGCop("Auto-generated")]
-    [CssSelector("", "SubjectPage #Scaffold #ScrollView")]
+    [CssSelector("", "SubjectPage #Scaffold ScrollView")]
     [CssBody("height: calc(\"Container\");")]
     class SubjectPageScaffoldScrollViewCssRule : CssRule
     {
         public override bool Matches(View view)
         {
-            // CssEngine will only call me if a view matches: #ScrollView
+            // CssEngine will only call me if a view matches: ScrollView
 
             view = CssEngine.FindParentById(view, "Scaffold");
 
@@ -1575,8 +1575,9 @@ namespace File_App.UI.Styles.Common
             return true;
         }
 
-        public override Task Apply(View view)
+        public override Task Apply(View untypedView)
         {
+            var view = (ScrollView)untypedView;
             view.Css.Height = Length.AutoStrategy.Container;
 
             return Task.CompletedTask;

@@ -25,7 +25,7 @@ namespace UI.Modules
         {
             WordTitle.Text = WordInfo.Text;
             WordRank.Text = WordInfo.OtherForms;
-            WordSub.Text = WordInfo.Meanig;
+            WordSub.Text = WordInfo.Meaning;
         }
     }
 }

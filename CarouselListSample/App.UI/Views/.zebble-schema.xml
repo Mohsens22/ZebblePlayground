@@ -88,6 +88,7 @@
       <xs:enumeration value="/Resources/Images/Icons/info.png" />
       <xs:enumeration value="/Resources/Images/Icons/ios-arrow-back.png" />
       <xs:enumeration value="/Resources/Images/Icons/Menu.png" />
+      <xs:enumeration value="/Resources/Images/Icons/MenuCircle.png" />
       <xs:enumeration value="/Resources/Images/Icons/not-found.png" />
       <xs:enumeration value="/Resources/Images/Icons/settings-icon-blue.png" />
       <xs:enumeration value="/Resources/Images/Icons/settings-icon.png" />
