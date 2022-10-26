@@ -53,7 +53,7 @@ namespace UI
 
             // Run normally?
             // -------------------------------
-            return Nav.Go<SubjectPage>();
+            return Nav.Go<CategoriesPage>();
            // return ViewModel.StartUp.Run();
         }
 

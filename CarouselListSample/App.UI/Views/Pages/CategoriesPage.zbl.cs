@@ -14,7 +14,7 @@ namespace UI.Pages
         {
             LiveApi liveApi = new LiveApi();
             var categories = await liveApi.GetCategories();
-            CategoriesList.UpdateSource(categories);
+            await CategoriesList.UpdateSource(categories);
             await base.OnInitializing();
         }
         public override async Task OnPreRender()

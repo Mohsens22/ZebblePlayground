@@ -6,9 +6,17 @@
          <Stack CssClass="PrimaryButton" on-Tapped="GoBack">
             <TextView Text="Back" />
          </Stack>
-         <CollectionView of="StringVM, ItemTemp" Id="SubjectList" ShouldMeasureForAll="false">
-            <class CssClass="ListItem" type="ItemTemp" base="Canvas" AutoFlash="false" viewmodel="StringVM" />
-         </CollectionView>
+         <ScrollView Id="ScrollHolder">
+            <CollectionView of="WordInfoVM, ItemTemp" Id="SubjectList" ShouldMeasureForAll="false">
+               <class CssClass="ListItem"
+                      type="ItemTemp"
+                      ClipChildren="true"
+                      base="Modules.SubjectListItem"
+                      AutoFlash="false"
+                      viewmodel="WordInfoVM"
+                      WordInfo="@{Model.Source,x=>x}" />
+            </CollectionView>
+         </ScrollView>
       </Stack>
    </class>
 </zbl>

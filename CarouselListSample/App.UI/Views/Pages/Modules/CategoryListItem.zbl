@@ -5,18 +5,11 @@
       <Stack>
          <TextView Id="CategoryName" Text="@{CategoryItem, x=>x.Name}" />
          <RecyclerCarousel Id="Carousel"
-                           of="Domain.Models.Subject, SlideTemplate"
+                           of="Domain.Models.Subject, UI.Modules.SlideTemplate"
                            ShowBullets="false"
                            CenterAligned="false"
                            SlideWidth="80"
-                           ClipChildren="false">
-            <class type="SlideTemplate" base="RecyclerCarouselSlide[Domain.Models.Subject]" ClipChildren="false">
-               <Stack CssClass="CategorySlide">
-                  <ImageView CssClass="SubjectImage" Path="@{Item, x=>x.ImageURL}" Stretch="AspectFill" />
-                  <TextView CssClass="SubjectName" Text="@{Item, x=>x.Name}" Wrap="true" />
-               </Stack>
-            </class>
-         </RecyclerCarousel>
+                           ClipChildren="false" />
       </Stack>
    </class>
 </zbl>

@@ -50,6 +50,8 @@
     </EmbeddedResource>
     <None Include="$(MSBuildThisFileDirectory)Views\Pages\CategoriesPage.zbl" />
     <None Include="$(MSBuildThisFileDirectory)Views\Pages\Modules\CategoryListItem.zbl" />
+    <None Include="$(MSBuildThisFileDirectory)Views\Pages\Modules\SlideTemplate.zbl" />
+    <None Include="$(MSBuildThisFileDirectory)Views\Pages\Modules\SubjectListItem.zbl" />
     <None Include="$(MSBuildThisFileDirectory)Views\Pages\SubjectPage.zbl" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +63,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)UIContext.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\CategoriesPage.zbl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Modules\CategoryListItem.zbl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Modules\SlideTemplate.zbl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Modules\SubjectListItem.zbl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\SubjectPage.zbl.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<zbl xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation="../../.zebble-schema.xml">
+   <class type="SlideTemplate"
+          base="RecyclerCarouselSlide[Domain.Models.Subject]"
+          ClipChildren="false"
+          namespace="UI.Modules">
+      <Stack CssClass="CategorySlide" on-Tapped="OnSlideTapped">
+         <ImageView CssClass="SubjectImage" Path="@{Item, x=>x.ImageURL}" Stretch="AspectFill" />
+         <TextView CssClass="SubjectName" Text="@{Item, x=>x.Name}" Wrap="true" />
+      </Stack>
+   </class>
+</zbl>

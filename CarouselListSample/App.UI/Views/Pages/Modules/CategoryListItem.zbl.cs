@@ -3,8 +3,11 @@ using Domain.Models;
 using Olive;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UI.Pages;
+using Zebble;
 
 namespace UI.Modules
 {
@@ -25,5 +28,6 @@ namespace UI.Modules
         {
             await Carousel.UpdateDataSource(CategoryItem.Value.Subjects);
         }
+
     }
 }

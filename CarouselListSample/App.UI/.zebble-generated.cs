@@ -64,7 +64,8 @@ namespace UI.Pages
     partial class SubjectPage : Page
     {
         public Stack Scaffold = new Stack();
-        public CollectionView<StringVM, ItemTemp> SubjectList = new CollectionView<StringVM, ItemTemp>();
+        public ScrollView ScrollHolder = new ScrollView();
+        public CollectionView<WordInfoVM, ItemTemp> SubjectList = new CollectionView<WordInfoVM, ItemTemp>();
         protected override async Task InitializeFromMarkup()
         {
             await base.InitializeFromMarkup();
@@ -75,27 +76,33 @@ namespace UI.Pages
 
             var __textView1 = new TextView() { Text = "Back" };
 
+            ScrollHolder.Id = "ScrollHolder";
+
             SubjectList.Id = "SubjectList";
             SubjectList.ShouldMeasureForAll = false;
 
             await __stack1.Add(__textView1);
-            await Scaffold.AddRange(new View[] { __stack1, SubjectList });
+            await ScrollHolder.Add(SubjectList);
+            await Scaffold.AddRange(new View[] { __stack1, ScrollHolder });
             await Add(Scaffold);
         }
 
         [CacheView]
         [EscapeGCop("Auto-generated")]
         [SourceCode(@"Views\Pages\SubjectPage.zbl")]
-        public partial class ItemTemp : Canvas, ITemplate<StringVM>
+        public partial class ItemTemp : Modules.SubjectListItem, ITemplate<WordInfoVM>
         {
-            public StringVM Model = Zebble.Mvvm.ViewModel.The<StringVM>();
+            public WordInfoVM Model = Zebble.Mvvm.ViewModel.The<WordInfoVM>();
 
             protected override async Task InitializeFromMarkup()
             {
                 await base.InitializeFromMarkup();
 
                 this.CssClass = "ListItem";
+                this.ClipChildren = true;
                 this.AutoFlash = false;
+
+                this.Bind("WordInfo", () => Model.Source,x=>x);
             }
             }}
         }
@@ -120,7 +127,7 @@ namespace UI.Modules
     partial class CategoryListItem : ListViewItem<Domain.Models.Category>
     {
         public TextView CategoryName = new TextView();
-        public RecyclerCarousel<Domain.Models.Subject, SlideTemplate> Carousel = new RecyclerCarousel<Domain.Models.Subject, SlideTemplate>();
+        public RecyclerCarousel<Domain.Models.Subject, UI.Modules.SlideTemplate> Carousel = new RecyclerCarousel<Domain.Models.Subject, UI.Modules.SlideTemplate>();
         protected override async Task InitializeFromMarkup()
         {
             await base.InitializeFromMarkup();
@@ -139,29 +146,87 @@ namespace UI.Modules
             await __stack1.AddRange(new View[] { CategoryName, Carousel });
             await Add(__stack1);
         }
+    }
+}
+#endregion
 
-        [EscapeGCop("Auto-generated")]
-        [SourceCode(@"Views\Pages\Modules\CategoryListItem.zbl")]
-        public partial class SlideTemplate : RecyclerCarouselSlide<Domain.Models.Subject>
+#region UI.Modules.SlideTemplate
+namespace UI.Modules
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using Domain;
+    using Zebble;
+    using Zebble.Plugin;
+    using Olive;
+    using Zebble.Services.Css;
+
+    [EscapeGCop("Auto-generated")]
+    [SourceCode(@"Views\Pages\Modules\SlideTemplate.zbl")]
+    partial class SlideTemplate : RecyclerCarouselSlide<Domain.Models.Subject>
+    {
+        protected override async Task InitializeFromMarkup()
         {
-            protected override async Task InitializeFromMarkup()
-            {
-                await base.InitializeFromMarkup();
+            await base.InitializeFromMarkup();
 
-                this.ClipChildren = false;
+            this.ClipChildren = false;
 
-                var __stack1 = new Stack() { CssClass = "CategorySlide" };
+            var __stack1 = new Stack() { CssClass = "CategorySlide" }.On(x => x.Tapped, OnSlideTapped);
 
-                var __imageView1 = new ImageView() { CssClass = "SubjectImage", Stretch = Stretch.AspectFill }.Bind("Path", () => Item, x=>x.ImageURL);
+            var __imageView1 = new ImageView() { CssClass = "SubjectImage", Stretch = Stretch.AspectFill }.Bind("Path", () => Item, x=>x.ImageURL);
 
-                var __textView1 = new TextView() { CssClass = "SubjectName", Wrap = true }.Bind("Text", () => Item, x=>x.Name);
+            var __textView1 = new TextView() { CssClass = "SubjectName", Wrap = true }.Bind("Text", () => Item, x=>x.Name);
 
-                await __stack1.AddRange(new View[] { __imageView1, __textView1 });
-                await Add(__stack1);
-            }
-            }}
+            await __stack1.AddRange(new View[] { __imageView1, __textView1 });
+            await Add(__stack1);
         }
-        #endregion
+    }
+}
+#endregion
+
+#region UI.Modules.SubjectListItem
+namespace UI.Modules
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using Domain;
+    using Zebble;
+    using Zebble.Plugin;
+    using Olive;
+    using Zebble.Services.Css;
+
+    [EscapeGCop("Auto-generated")]
+    [SourceCode(@"Views\Pages\Modules\SubjectListItem.zbl")]
+    partial class SubjectListItem : Stack
+    {
+        public Stack TextHolder = new Stack();
+        public TextView WordTitle = new TextView();
+        public TextView WordRank = new TextView();
+        public TextView WordSub = new TextView();
+        protected override async Task InitializeFromMarkup()
+        {
+            await base.InitializeFromMarkup();
+
+            TextHolder.Id = "TextHolder";
+
+            WordTitle.Id = "WordTitle";
+
+            WordRank.Id = "WordRank";
+
+            WordSub.Id = "WordSub";
+
+            await TextHolder.AddRange(new View[] { WordTitle, WordRank, WordSub });
+            await Add(TextHolder);
+        }
+    }
+}
+#endregion
 
 namespace UI
 {

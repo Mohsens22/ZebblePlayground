@@ -78,9 +78,27 @@ namespace UI
             CssEngine.Add(new File_App.UI.Styles.Common.DarkModeCategoryListItemSubjectNameCssRule());
             CssEngine.Add(new File_App.UI.Styles.Common.PageDarkCategoryListItemSubjectNameCssRule());
             CssEngine.Add(new File_App.UI.Styles.Common.SubjectPageScaffoldCssRule());
+            CssEngine.Add(new File_App.UI.Styles.Common.SubjectPageScaffoldScrollViewCssRule());
+            CssEngine.Add(new File_App.UI.Styles.Common.SubjectPageScaffoldSubjectListCssRule());
             CssEngine.Add(new File_App.UI.Styles.Common.SubjectPagePrimaryButtonCssRule());
             CssEngine.Add(new File_App.UI.Styles.Common.SubjectPagePrimaryButtonTextViewCssRule());
             CssEngine.Add(new File_App.UI.Styles.Common.SubjectPageListItemCssRule());
+            CssEngine.Add(new File_App.UI.Styles.Common.SubjectPageListItemTextholderCssRule());
+            CssEngine.Add(new File_App.UI.Styles.Common.SubjectPageListItemWordTitleCssRule());
+            CssEngine.Add(new File_App.UI.Styles.Common.SubjectPageListItemWordRankCssRule());
+            CssEngine.Add(new File_App.UI.Styles.Common.SubjectPageListItemWordSubCssRule());
+            CssEngine.Add(new File_App.UI.Styles.Common.DarkModeScaffoldCssRule());
+            CssEngine.Add(new File_App.UI.Styles.Common.PageDarkScaffoldCssRule());
+            CssEngine.Add(new File_App.UI.Styles.Common.DarkModeScaffoldListItemCssRule());
+            CssEngine.Add(new File_App.UI.Styles.Common.PageDarkScaffoldListItemCssRule());
+            CssEngine.Add(new File_App.UI.Styles.Common.DarkModeScaffoldListItemWordTitleCssRule());
+            CssEngine.Add(new File_App.UI.Styles.Common.PageDarkScaffoldListItemWordTitleCssRule());
+            CssEngine.Add(new File_App.UI.Styles.Common.DarkModeScaffoldListItemWordRankCssRule());
+            CssEngine.Add(new File_App.UI.Styles.Common.PageDarkScaffoldListItemWordRankCssRule());
+            CssEngine.Add(new File_App.UI.Styles.Common.DarkModeScaffoldListItemWordSubCssRule());
+            CssEngine.Add(new File_App.UI.Styles.Common.PageDarkScaffoldListItemWordSubCssRule());
+            CssEngine.Add(new File_App.UI.Styles.Common.DarkModePrimaryButtonTextViewCssRule());
+            CssEngine.Add(new File_App.UI.Styles.Common.PageDarkPrimaryButtonTextViewCssRule());
             CssEngine.Add(new File_App.UI.Styles.Common.BodyCssRule());
             CssEngine.Add(new File_App.UI.Styles.Common.WrapperCssRule());
         }
@@ -1538,8 +1556,70 @@ namespace File_App.UI.Styles.Common
 namespace File_App.UI.Styles.Common
 {
     [EscapeGCop("Auto-generated")]
-    [CssSelector("App.UI/Styles/Components/_Utilities.scss:57", "SubjectPage .PrimaryButton")]
-    [CssBody("border-radius: 25px; background-color: #32BDD2; margin-top: 54px; height: 40px; width: 204px; margin-left: calc(\"view.Width,view.parent.Width,(vw,pw)=>(pw-vw)/2\");")]
+    [CssSelector("", "SubjectPage #Scaffold #ScrollView")]
+    [CssBody("height: calc(\"Container\");")]
+    class SubjectPageScaffoldScrollViewCssRule : CssRule
+    {
+        public override bool Matches(View view)
+        {
+            // CssEngine will only call me if a view matches: #ScrollView
+
+            view = CssEngine.FindParentById(view, "Scaffold");
+
+            if (view is null) return false;
+
+            view = CssEngine.FindParentByType<SubjectPage>(view);
+
+            if (view is null) return false;
+
+            return true;
+        }
+
+        public override Task Apply(View view)
+        {
+            view.Css.Height = Length.AutoStrategy.Container;
+
+            return Task.CompletedTask;
+        }
+    }
+}
+
+namespace File_App.UI.Styles.Common
+{
+    [EscapeGCop("Auto-generated")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:57", "SubjectPage #Scaffold #SubjectList")]
+    [CssBody("height: calc(\"Content\");")]
+    class SubjectPageScaffoldSubjectListCssRule : CssRule
+    {
+        public override bool Matches(View view)
+        {
+            // CssEngine will only call me if a view matches: #SubjectList
+
+            view = CssEngine.FindParentById(view, "Scaffold");
+
+            if (view is null) return false;
+
+            view = CssEngine.FindParentByType<SubjectPage>(view);
+
+            if (view is null) return false;
+
+            return true;
+        }
+
+        public override Task Apply(View view)
+        {
+            view.Css.Height = Length.AutoStrategy.Content;
+
+            return Task.CompletedTask;
+        }
+    }
+}
+
+namespace File_App.UI.Styles.Common
+{
+    [EscapeGCop("Auto-generated")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:59", "SubjectPage .PrimaryButton")]
+    [CssBody("border-radius: 25px; background-color: #32BDD2; margin-top: 24px; height: 40px; width: 204px; margin-left: calc(\"view.Width,view.parent.Width,(vw,pw)=>(pw-vw)/2\");")]
     class SubjectPagePrimaryButtonCssRule : CssRule
     {
         public override bool Matches(View view)
@@ -1557,7 +1637,7 @@ namespace File_App.UI.Styles.Common
         {
             view.Css.Height = 40;
             view.Css.Width = 204;
-            view.Css.Margin.Top = 54;
+            view.Css.Margin.Top = 24;
             view.Css.Margin.Left = new Length.BindingLengthRequest(view.Width,view.parent.Width,(vw,pw)=>(pw-vw)/2);
             view.Css.BorderRadius = 25;
             view.Css.BackgroundColor = "#32BDD2";
@@ -1570,7 +1650,7 @@ namespace File_App.UI.Styles.Common
 namespace File_App.UI.Styles.Common
 {
     [EscapeGCop("Auto-generated")]
-    [CssSelector("App.UI/Styles/Components/_Utilities.scss:58", "SubjectPage .PrimaryButton TextView")]
+    [CssSelector("", "SubjectPage .PrimaryButton TextView")]
     [CssBody("text-align: center; font-weight: bold; font-size: 14px; color: white; margin-top: calc(\"view.Height,view.parent.Height,(vh,ph)=>(ph-vh)/2\");")]
     class SubjectPagePrimaryButtonTextViewCssRule : CssRule
     {
@@ -1606,8 +1686,8 @@ namespace File_App.UI.Styles.Common
 namespace File_App.UI.Styles.Common
 {
     [EscapeGCop("Auto-generated")]
-    [CssSelector("", "SubjectPage .ListItem")]
-    [CssBody("height: 80px;")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:62", "SubjectPage .ListItem")]
+    [CssBody("height: 114px; margin-left: 20px; margin-right: 20px; margin-top: 12px; background-color: white; border-radius: 6px; padding-left: 28px; padding-right: 28px; padding-top: 22px; padding-bottom: 22px;")]
     class SubjectPageListItemCssRule : CssRule
     {
         public override bool Matches(View view)
@@ -1623,7 +1703,16 @@ namespace File_App.UI.Styles.Common
 
         public override Task Apply(View view)
         {
-            view.Css.Height = 80;
+            view.Css.Height = 114;
+            view.Css.Padding.Left = 28;
+            view.Css.Padding.Right = 28;
+            view.Css.Padding.Top = 22;
+            view.Css.Padding.Bottom = 22;
+            view.Css.Margin.Left = 20;
+            view.Css.Margin.Right = 20;
+            view.Css.Margin.Top = 12;
+            view.Css.BackgroundColor = Colors.White;
+            view.Css.BorderRadius = 6;
 
             return Task.CompletedTask;
         }
@@ -1633,7 +1722,549 @@ namespace File_App.UI.Styles.Common
 namespace File_App.UI.Styles.Common
 {
     [EscapeGCop("Auto-generated")]
-    [CssSelector("App.UI/Styles/Components/_Utilities.scss:62", "#Body")]
+    [CssSelector("", "SubjectPage .ListItem #Textholder")]
+    [CssBody("margin-top: calc(\"view.Height,view.parent.Height,(vh,ph)=>(ph-vh)/2\");")]
+    class SubjectPageListItemTextholderCssRule : CssRule
+    {
+        public override bool Matches(View view)
+        {
+            // CssEngine will only call me if a view matches: #Textholder
+
+            view = CssEngine.FindParentByCssClass(view, "ListItem");
+
+            if (view is null) return false;
+
+            view = CssEngine.FindParentByType<SubjectPage>(view);
+
+            if (view is null) return false;
+
+            return true;
+        }
+
+        public override Task Apply(View view)
+        {
+            view.Css.Margin.Top = new Length.BindingLengthRequest(view.Height,view.parent.Height,(vh,ph)=>(ph-vh)/2);
+
+            return Task.CompletedTask;
+        }
+    }
+}
+
+namespace File_App.UI.Styles.Common
+{
+    [EscapeGCop("Auto-generated")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:64", "SubjectPage .ListItem #WordTitle")]
+    [CssBody("font-weight: bold; font-size: 20px; color: #3A1251;")]
+    class SubjectPageListItemWordTitleCssRule : CssRule
+    {
+        public override bool Matches(View view)
+        {
+            // CssEngine will only call me if a view matches: #WordTitle
+
+            view = CssEngine.FindParentByCssClass(view, "ListItem");
+
+            if (view is null) return false;
+
+            view = CssEngine.FindParentByType<SubjectPage>(view);
+
+            if (view is null) return false;
+
+            return true;
+        }
+
+        public override Task Apply(View view)
+        {
+            view.Css.Font.Bold = true;
+            view.Css.Font.Size = 20;
+            view.Css.TextColor = "#3A1251";
+
+            return Task.CompletedTask;
+        }
+    }
+}
+
+namespace File_App.UI.Styles.Common
+{
+    [EscapeGCop("Auto-generated")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:65", "SubjectPage .ListItem #WordRank")]
+    [CssBody("color: #755985; margin-top: 5px;")]
+    class SubjectPageListItemWordRankCssRule : CssRule
+    {
+        public override bool Matches(View view)
+        {
+            // CssEngine will only call me if a view matches: #WordRank
+
+            view = CssEngine.FindParentByCssClass(view, "ListItem");
+
+            if (view is null) return false;
+
+            view = CssEngine.FindParentByType<SubjectPage>(view);
+
+            if (view is null) return false;
+
+            return true;
+        }
+
+        public override Task Apply(View view)
+        {
+            view.Css.Margin.Top = 5;
+            view.Css.TextColor = "#755985";
+
+            return Task.CompletedTask;
+        }
+    }
+}
+
+namespace File_App.UI.Styles.Common
+{
+    [EscapeGCop("Auto-generated")]
+    [CssSelector("", "SubjectPage .ListItem #WordSub")]
+    [CssBody("color: #755985; margin-top: 5px;")]
+    class SubjectPageListItemWordSubCssRule : CssRule
+    {
+        public override bool Matches(View view)
+        {
+            // CssEngine will only call me if a view matches: #WordSub
+
+            view = CssEngine.FindParentByCssClass(view, "ListItem");
+
+            if (view is null) return false;
+
+            view = CssEngine.FindParentByType<SubjectPage>(view);
+
+            if (view is null) return false;
+
+            return true;
+        }
+
+        public override Task Apply(View view)
+        {
+            view.Css.Margin.Top = 5;
+            view.Css.TextColor = "#755985";
+
+            return Task.CompletedTask;
+        }
+    }
+}
+
+namespace File_App.UI.Styles.Common
+{
+    [EscapeGCop("Auto-generated")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:68", ".dark-mode #Scaffold")]
+    [CssBody("background-color: black;")]
+    class DarkModeScaffoldCssRule : CssRule
+    {
+        public override bool Matches(View view)
+        {
+            // CssEngine will only call me if a view matches: #Scaffold
+
+            view = CssEngine.FindParentByCssClass(view, "dark-mode");
+
+            if (view is null) return false;
+
+            return true;
+        }
+
+        public override Task Apply(View view)
+        {
+            view.Css.BackgroundColor = Colors.Black;
+
+            return Task.CompletedTask;
+        }
+    }
+}
+
+namespace File_App.UI.Styles.Common
+{
+    [EscapeGCop("Auto-generated")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:68", "Page:dark #Scaffold")]
+    [CssBody("background-color: black;")]
+    class PageDarkScaffoldCssRule : CssRule
+    {
+        public override bool Matches(View view)
+        {
+            // CssEngine will only call me if a view matches: #Scaffold
+
+            view = view.parent;
+            while (true)
+            {
+                if (view == null) return false;
+                else if (view is Page && view.PseudoCssState.ContainsWholeWord("dark")) break;
+                view = view.parent;
+            }
+
+            return true;
+        }
+
+        public override Task Apply(View view)
+        {
+            view.Css.BackgroundColor = Colors.Black;
+
+            return Task.CompletedTask;
+        }
+    }
+}
+
+namespace File_App.UI.Styles.Common
+{
+    [EscapeGCop("Auto-generated")]
+    [CssSelector("", ".dark-mode #Scaffold .ListItem")]
+    [CssBody("background-color: #333333;")]
+    class DarkModeScaffoldListItemCssRule : CssRule
+    {
+        public override bool Matches(View view)
+        {
+            // CssEngine will only call me if a view matches: .ListItem
+
+            view = CssEngine.FindParentById(view, "Scaffold");
+
+            if (view is null) return false;
+
+            view = CssEngine.FindParentByCssClass(view, "dark-mode");
+
+            if (view is null) return false;
+
+            return true;
+        }
+
+        public override Task Apply(View view)
+        {
+            view.Css.BackgroundColor = "#333333";
+
+            return Task.CompletedTask;
+        }
+    }
+}
+
+namespace File_App.UI.Styles.Common
+{
+    [EscapeGCop("Auto-generated")]
+    [CssSelector("", "Page:dark #Scaffold .ListItem")]
+    [CssBody("background-color: #333333;")]
+    class PageDarkScaffoldListItemCssRule : CssRule
+    {
+        public override bool Matches(View view)
+        {
+            // CssEngine will only call me if a view matches: .ListItem
+
+            view = CssEngine.FindParentById(view, "Scaffold");
+
+            if (view is null) return false;
+
+            view = view.parent;
+            while (true)
+            {
+                if (view == null) return false;
+                else if (view is Page && view.PseudoCssState.ContainsWholeWord("dark")) break;
+                view = view.parent;
+            }
+
+            return true;
+        }
+
+        public override Task Apply(View view)
+        {
+            view.Css.BackgroundColor = "#333333";
+
+            return Task.CompletedTask;
+        }
+    }
+}
+
+namespace File_App.UI.Styles.Common
+{
+    [EscapeGCop("Auto-generated")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:70", ".dark-mode #Scaffold .ListItem #WordTitle")]
+    [CssBody("color: white;")]
+    class DarkModeScaffoldListItemWordTitleCssRule : CssRule
+    {
+        public override bool Matches(View view)
+        {
+            // CssEngine will only call me if a view matches: #WordTitle
+
+            view = CssEngine.FindParentByCssClass(view, "ListItem");
+
+            if (view is null) return false;
+
+            view = CssEngine.FindParentById(view, "Scaffold");
+
+            if (view is null) return false;
+
+            view = CssEngine.FindParentByCssClass(view, "dark-mode");
+
+            if (view is null) return false;
+
+            return true;
+        }
+
+        public override Task Apply(View view)
+        {
+            view.Css.TextColor = Colors.White;
+
+            return Task.CompletedTask;
+        }
+    }
+}
+
+namespace File_App.UI.Styles.Common
+{
+    [EscapeGCop("Auto-generated")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:70", "Page:dark #Scaffold .ListItem #WordTitle")]
+    [CssBody("color: white;")]
+    class PageDarkScaffoldListItemWordTitleCssRule : CssRule
+    {
+        public override bool Matches(View view)
+        {
+            // CssEngine will only call me if a view matches: #WordTitle
+
+            view = CssEngine.FindParentByCssClass(view, "ListItem");
+
+            if (view is null) return false;
+
+            view = CssEngine.FindParentById(view, "Scaffold");
+
+            if (view is null) return false;
+
+            view = view.parent;
+            while (true)
+            {
+                if (view == null) return false;
+                else if (view is Page && view.PseudoCssState.ContainsWholeWord("dark")) break;
+                view = view.parent;
+            }
+
+            return true;
+        }
+
+        public override Task Apply(View view)
+        {
+            view.Css.TextColor = Colors.White;
+
+            return Task.CompletedTask;
+        }
+    }
+}
+
+namespace File_App.UI.Styles.Common
+{
+    [EscapeGCop("Auto-generated")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:71", ".dark-mode #Scaffold .ListItem #WordRank")]
+    [CssBody("color: #737373;")]
+    class DarkModeScaffoldListItemWordRankCssRule : CssRule
+    {
+        public override bool Matches(View view)
+        {
+            // CssEngine will only call me if a view matches: #WordRank
+
+            view = CssEngine.FindParentByCssClass(view, "ListItem");
+
+            if (view is null) return false;
+
+            view = CssEngine.FindParentById(view, "Scaffold");
+
+            if (view is null) return false;
+
+            view = CssEngine.FindParentByCssClass(view, "dark-mode");
+
+            if (view is null) return false;
+
+            return true;
+        }
+
+        public override Task Apply(View view)
+        {
+            view.Css.TextColor = "#737373";
+
+            return Task.CompletedTask;
+        }
+    }
+}
+
+namespace File_App.UI.Styles.Common
+{
+    [EscapeGCop("Auto-generated")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:71", "Page:dark #Scaffold .ListItem #WordRank")]
+    [CssBody("color: #737373;")]
+    class PageDarkScaffoldListItemWordRankCssRule : CssRule
+    {
+        public override bool Matches(View view)
+        {
+            // CssEngine will only call me if a view matches: #WordRank
+
+            view = CssEngine.FindParentByCssClass(view, "ListItem");
+
+            if (view is null) return false;
+
+            view = CssEngine.FindParentById(view, "Scaffold");
+
+            if (view is null) return false;
+
+            view = view.parent;
+            while (true)
+            {
+                if (view == null) return false;
+                else if (view is Page && view.PseudoCssState.ContainsWholeWord("dark")) break;
+                view = view.parent;
+            }
+
+            return true;
+        }
+
+        public override Task Apply(View view)
+        {
+            view.Css.TextColor = "#737373";
+
+            return Task.CompletedTask;
+        }
+    }
+}
+
+namespace File_App.UI.Styles.Common
+{
+    [EscapeGCop("Auto-generated")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:72", ".dark-mode #Scaffold .ListItem #WordSub")]
+    [CssBody("color: #737373;")]
+    class DarkModeScaffoldListItemWordSubCssRule : CssRule
+    {
+        public override bool Matches(View view)
+        {
+            // CssEngine will only call me if a view matches: #WordSub
+
+            view = CssEngine.FindParentByCssClass(view, "ListItem");
+
+            if (view is null) return false;
+
+            view = CssEngine.FindParentById(view, "Scaffold");
+
+            if (view is null) return false;
+
+            view = CssEngine.FindParentByCssClass(view, "dark-mode");
+
+            if (view is null) return false;
+
+            return true;
+        }
+
+        public override Task Apply(View view)
+        {
+            view.Css.TextColor = "#737373";
+
+            return Task.CompletedTask;
+        }
+    }
+}
+
+namespace File_App.UI.Styles.Common
+{
+    [EscapeGCop("Auto-generated")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:72", "Page:dark #Scaffold .ListItem #WordSub")]
+    [CssBody("color: #737373;")]
+    class PageDarkScaffoldListItemWordSubCssRule : CssRule
+    {
+        public override bool Matches(View view)
+        {
+            // CssEngine will only call me if a view matches: #WordSub
+
+            view = CssEngine.FindParentByCssClass(view, "ListItem");
+
+            if (view is null) return false;
+
+            view = CssEngine.FindParentById(view, "Scaffold");
+
+            if (view is null) return false;
+
+            view = view.parent;
+            while (true)
+            {
+                if (view == null) return false;
+                else if (view is Page && view.PseudoCssState.ContainsWholeWord("dark")) break;
+                view = view.parent;
+            }
+
+            return true;
+        }
+
+        public override Task Apply(View view)
+        {
+            view.Css.TextColor = "#737373";
+
+            return Task.CompletedTask;
+        }
+    }
+}
+
+namespace File_App.UI.Styles.Common
+{
+    [EscapeGCop("Auto-generated")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:75", ".dark-mode .PrimaryButton TextView")]
+    [CssBody("color: #3A1251;")]
+    class DarkModePrimaryButtonTextViewCssRule : CssRule
+    {
+        public override bool Matches(View view)
+        {
+            // CssEngine will only call me if a view matches: TextView
+
+            view = CssEngine.FindParentByCssClass(view, "PrimaryButton");
+
+            if (view is null) return false;
+
+            view = CssEngine.FindParentByCssClass(view, "dark-mode");
+
+            if (view is null) return false;
+
+            return true;
+        }
+
+        public override Task Apply(View untypedView)
+        {
+            var view = (TextView)untypedView;
+            view.Css.TextColor = "#3A1251";
+
+            return Task.CompletedTask;
+        }
+    }
+}
+
+namespace File_App.UI.Styles.Common
+{
+    [EscapeGCop("Auto-generated")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:75", "Page:dark .PrimaryButton TextView")]
+    [CssBody("color: #3A1251;")]
+    class PageDarkPrimaryButtonTextViewCssRule : CssRule
+    {
+        public override bool Matches(View view)
+        {
+            // CssEngine will only call me if a view matches: TextView
+
+            view = CssEngine.FindParentByCssClass(view, "PrimaryButton");
+
+            if (view is null) return false;
+
+            view = view.parent;
+            while (true)
+            {
+                if (view == null) return false;
+                else if (view is Page && view.PseudoCssState.ContainsWholeWord("dark")) break;
+                view = view.parent;
+            }
+
+            return true;
+        }
+
+        public override Task Apply(View untypedView)
+        {
+            var view = (TextView)untypedView;
+            view.Css.TextColor = "#3A1251";
+
+            return Task.CompletedTask;
+        }
+    }
+}
+
+namespace File_App.UI.Styles.Common
+{
+    [EscapeGCop("Auto-generated")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:77", "#Body")]
     [CssBody("height: 100%;")]
     class BodyCssRule : CssRule
     {
@@ -1656,7 +2287,7 @@ namespace File_App.UI.Styles.Common
 namespace File_App.UI.Styles.Common
 {
     [EscapeGCop("Auto-generated")]
-    [CssSelector("App.UI/Styles/Components/_Utilities.scss:64", "#Wrapper")]
+    [CssSelector("App.UI/Styles/Components/_Utilities.scss:80", "#Wrapper")]
     [CssBody("padding: 16px;")]
     class WrapperCssRule : CssRule
     {

@@ -2,12 +2,20 @@
     #Scaffold {
         background-color: #F5F5F5;
         height: 100%;
+
+        #ScrollView {
+            height: calc("Container");
+        }
+
+        #SubjectList {
+            height: calc("Content");
+        }
     }
 
     .PrimaryButton {
         border-radius: 25px;
         background-color: #32BDD2;
-        margin-top: 54px;
+        margin-top: 24px;
         height: 40px;
         width: 204px;
         margin-left: calc("view.Width,view.parent.Width,(vw,pw)=>(pw-vw)/2");
@@ -20,7 +28,65 @@
             margin-top: calc("view.Height,view.parent.Height,(vh,ph)=>(ph-vh)/2");
         }
     }
-    .ListItem{
-        height:80px;
+
+    .ListItem {
+        height: 114px;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 12px;
+        background-color: white;
+        border-radius: 6px;
+        padding-left: 28px;
+        padding-right: 28px;
+        padding-top: 22px;
+        padding-bottom: 22px;
+
+        #Textholder {
+            margin-top: calc("view.Height,view.parent.Height,(vh,ph)=>(ph-vh)/2");
+        }
+
+        #WordTitle {
+            font-weight: bold;
+            font-size: 20px;
+            color: #3A1251;
+        }
+
+        #WordRank {
+            color: #755985;
+            margin-top: 5px;
+        }
+
+        #WordSub {
+            color: #755985;
+            margin-top: 5px;
+        }
+    }
+}
+
+.dark-mode, Page:dark {
+    #Scaffold {
+        background-color: black;
+
+        .ListItem {
+            background-color: #333333;
+
+            #WordTitle {
+                color: white;
+            }
+
+            #WordRank {
+                color: #737373;
+            }
+
+            #WordSub {
+                color: #737373;
+            }
+        }
+    }
+
+    .PrimaryButton {
+        TextView {
+            color: #3A1251;
+        }
     }
 }

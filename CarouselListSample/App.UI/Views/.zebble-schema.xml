@@ -182,6 +182,8 @@
       <xs:enumeration value="Pages.CategoriesPage" />
       <xs:enumeration value="Pages.SubjectPage" />
       <xs:enumeration value="Modules.CategoryListItem" />
+      <xs:enumeration value="Modules.SlideTemplate" />
+      <xs:enumeration value="Modules.SubjectListItem" />
       <xs:enumeration value="@....." />
     </xs:restriction>
   </xs:simpleType>
@@ -223,6 +225,8 @@
       <xs:enumeration value="SubjectName" />
       <xs:enumeration value="PrimaryButton" />
       <xs:enumeration value="ListItem" />
+      <xs:enumeration value="ListItem" />
+      <xs:enumeration value="PrimaryButton" />
       <xs:enumeration value="@....." />
     </xs:restriction>
   </xs:simpleType>
@@ -262,6 +266,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="Page-AbstractType">
         <xs:attribute name="Scaffold" type="xs:string" />
+        <xs:attribute name="ScrollHolder" type="xs:string" />
         <xs:attribute name="SubjectList" type="xs:string" />
         <xs:anyAttribute processContents="skip" />
       </xs:extension>
@@ -279,6 +284,27 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="UI.Modules.CategoryListItem" nillable="true" type="UI__Modules__CategoryListItemType" />
+  <xs:complexType name="UI__Modules__SlideTemplateType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="RecyclerCarouselSlide-AbstractType">
+        <xs:anyAttribute processContents="skip" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UI.Modules.SlideTemplate" nillable="true" type="UI__Modules__SlideTemplateType" />
+  <xs:complexType name="UI__Modules__SubjectListItemType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="StackType">
+        <xs:attribute name="WordInfo" type="xs:string" />
+        <xs:attribute name="TextHolder" type="xs:string" />
+        <xs:attribute name="WordTitle" type="xs:string" />
+        <xs:attribute name="WordRank" type="xs:string" />
+        <xs:attribute name="WordSub" type="xs:string" />
+        <xs:anyAttribute processContents="skip" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UI.Modules.SubjectListItem" nillable="true" type="UI__Modules__SubjectListItemType" />
   <xs:complexType name="BoxShadowType">
     <xs:complexContent mixed="false">
       <xs:extension base="BoxShadowCanvasType">

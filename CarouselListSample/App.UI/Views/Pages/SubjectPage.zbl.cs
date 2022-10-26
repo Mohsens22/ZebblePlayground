@@ -7,31 +7,28 @@ using Olive;
 using System.Diagnostics;
 using Zebble.Mvvm;
 using System.Linq;
+using Domain.Models;
 
 namespace UI.Pages
 {
     partial class SubjectPage
     {
-        public string[] names = { "kamran", "ali", "mohsen" };
+
         public override async Task OnInitializing()
         {
-
+            var data = Nav.Param<List<WordInfo>>("info");
+            SubjectList.Source = data.Select(x => new WordInfoVM(x)).ToList();
             await base.OnInitializing();
         }
 
-        public override async Task OnRendered()
-        {
-            SubjectList.Source = names.Select(x => new StringVM(x)).ToList();
-            await base.OnRendered();
-        }
         public async void GoBack()
         {
-
+            await Nav.Back();
         }
     }
-    public class StringVM : ViewModel<string>
+    public class WordInfoVM : ViewModel<WordInfo>
     {
-        public StringVM() { }
-        public StringVM(string src) => Source.Set(src);
+        public WordInfoVM() { }
+        public WordInfoVM(WordInfo src) => Source.Set(src);
     }
 }
