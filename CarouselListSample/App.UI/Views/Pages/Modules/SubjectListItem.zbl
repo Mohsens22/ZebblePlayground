@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<zbl xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation="../../.zebble-schema.xml">
+   <class type="SubjectListItem" base="Stack" namespace="UI.Modules">
+      <Stack Id="TextHolder">
+         <TextView Id="WordTitle" />
+         <TextView Id="WordRank" />
+         <TextView Id="WordSub" />
+      </Stack>
+   </class>
+</zbl>

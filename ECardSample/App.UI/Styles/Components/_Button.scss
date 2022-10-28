@@ -1,0 +1,19 @@
+﻿@import "../Shared/_Colors.scss";
+
+Button {
+    height: 40px;
+    border: none;
+    color: $clrBlack;
+    margin-bottom: 10px;
+}
+
+Button:disabled {
+    color: $clrGrey200;
+    border: 1px solid $clrGrey300;
+}
+
+Link {
+    color: $clrBlack;
+    text-align: center;
+    margin-top: 15px;
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<zbl xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation="../.zebble-schema.xml">
+   <class type="SubjectPage" base="Page" namespace="UI.Pages">
+      <Stack Id="Scaffold">
+         <Stack CssClass="PrimaryButton" on-Tapped="GoBack">
+            <TextView Text="Back" />
+         </Stack>
+         <ScrollView Id="ScrollHolder">
+            <CollectionView of="WordInfoVM, ItemTemp" Id="SubjectList" ShouldMeasureForAll="false">
+               <class CssClass="ListItem"
+                      type="ItemTemp"
+                      ClipChildren="true"
+                      base="Modules.SubjectListItem"
+                      AutoFlash="false"
+                      viewmodel="WordInfoVM"
+                      WordInfo="@{Model.Source,x=>x}" />
+            </CollectionView>
+         </ScrollView>
+      </Stack>
+   </class>
+</zbl>

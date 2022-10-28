@@ -1,0 +1,12 @@
+﻿
+Blank {
+    height: calc("View.Root.Height, x => x");
+
+    #BodyScroller {
+        height: 100%;
+
+        #Body {
+            background-color: transparent;
+        }
+    }
+}

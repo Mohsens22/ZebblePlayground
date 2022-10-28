@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<zbl xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation="../.zebble-schema.xml">
+   <class type="CategoriesPage" base="Page" namespace="UI.Pages">
+      <Stack Id="Scaffold">
+         <ListView of="Domain.Models.Category, UI.Modules.CategoryListItem" Id="CategoriesList" />
+         <Stack CssClass="PrimaryButton" on-Tapped="ChangeTheme">
+            <TextView Text="Change Theme" />
+         </Stack>
+      </Stack>
+   </class>
+</zbl>
